@@ -15,7 +15,10 @@
         <p class="text-lg font-normal">
           You can find your favourite team and players around the world here!
         </p>
-        <button class="bg-white px-4 py-2 rounded-lg m-3">
+        <button
+          @click.prevent="$router.push({ path: '/area' })"
+          class="bg-white px-4 py-2 rounded-lg m-3"
+        >
           Search All Area
         </button>
       </div>

@@ -17,52 +17,30 @@
         </p>
       </div>
     </header>
-    <div class="container bg-blue-900 h-screen mx-auto">
-      <div class="grid grid-cols-10">
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24 text-lg">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24 text-lg">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24">JERMAN</button>
-        </div>
-        <div class="card p-3">
-          <button class="bg-white h-16 w-24">JERMAN</button>
-        </div>
+    <div class="container bg-blue-900 h-full mx-auto">
+      <div class="grid lg:grid-cols-10 md:grid-cols-5">
+        <AreaList v-for="area in areas" :key="area.id" :area="area"></AreaList>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import AreaList from "../components/AreaList.vue";
+
 export default {
   name: "Area",
+  components: {
+    AreaList,
+  },
+  computed: {
+    areas() {
+      return this.$store.state.areas;
+    },
+  },
+  created() {
+    this.$store.dispatch("fetchArea");
+  },
 };
 </script>
 

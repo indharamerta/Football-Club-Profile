@@ -3,7 +3,7 @@
     class="
       flex flex-row
       items-center
-      justify-start
+      justify-between
       bg-gray-700
       p-4
       fixed
@@ -12,8 +12,17 @@
   >
     <span
       class="text-white font-bold text-2xl hover:text-yellow-400 cursor-pointer"
-      >SOCCER CLUB</span
+      >JOJO SOCCER INFO</span
     >
+    <ul>
+      <li
+        v-if="$route.name !== 'Home'"
+        @click.prevent="$router.push({ path: '/' })"
+        class="text-white cursor-pointer"
+      >
+        Back to Home
+      </li>
+    </ul>
   </nav>
 </template>
 
