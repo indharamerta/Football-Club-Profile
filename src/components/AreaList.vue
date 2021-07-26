@@ -1,12 +1,24 @@
 <template>
   <div>
-    <div class="card p-3">
+    <div class="card p-1">
       <button
         @click.prevent="showClubs(area.id)"
-        class="bg-white h-16 w-24 text-sm"
+        class="
+          bg-ark-gray
+          h-24
+          w-32
+          p-2
+          text-sm
+          font-semibold
+          rounded-lg
+          text-gray-200
+          hover:bg-yellow-500 hover: hover:text-ark-gray
+        "
       >
         {{ area.name }}
-        <p>{{ area.area.name }}</p>
+        <p class="font-normal text-gray-400 hover:text-gray-200">
+          {{ area.area.name }}
+        </p>
       </button>
     </div>
   </div>

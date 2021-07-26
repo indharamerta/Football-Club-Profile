@@ -10,13 +10,24 @@
         justify-center
         items-center
         text-center
-        bg-white
+        bg-ark-gray bg-opacity-70
+        rounded-2xl
       "
     >
-      <img :src="club.crestUrl" alt="img" class="object-scale-down" />
-      <p class="">{{ club.name }}</p>
-      <button @click.prevent="playerList(club.id)" class="bg-red-700">
-        Get details
+      <img :src="club.crestUrl" alt="img" class="object-scale-down h-1/2" />
+      <p class="text-gray-200 mt-5 mb-2 font-semibold">{{ club.name }}</p>
+      <button
+        @click.prevent="playerList(club.id)"
+        class="
+          rounded-xl
+          bg-yellow-500
+          px-6
+          py-1
+          text-ark-gray
+          hover:bg-ark-gray hover:text-yellow-500
+        "
+      >
+        Club Details
       </button>
     </div>
   </div>

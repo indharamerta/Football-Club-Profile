@@ -12,6 +12,7 @@ export default new Vuex.Store({
     areas: [],
     clubs: [],
     players: [],
+    detail: [],
   },
   mutations: {
     SET_Areas(state, payload) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     },
     SET_Players(state, payload) {
       state.players = payload;
+    },
+    SET_Detail(state, payload) {
+      state.detail = payload;
     },
   },
   actions: {
@@ -54,16 +58,28 @@ export default new Vuex.Store({
         });
     },
     fetchPlayers(context, id) {
-      console.log(id);
       axios({
         method: "GET",
         url: baseUrl + "/teams/" + id,
         headers: { "X-Auth-Token": "4185cd826317448f813db4ad4d08f0d0" },
       })
         .then(({ data }) => {
-          console.log(data);
           router.push("/player");
           context.commit("SET_Players", data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    showDetail(context, id) {
+      axios({
+        method: "GET",
+        url: baseUrl + "/players/" + id,
+        headers: { "X-Auth-Token": "4185cd826317448f813db4ad4d08f0d0" },
+      })
+        .then(({ data }) => {
+          router.push("/player-detail");
+          context.commit("SET_Detail", data);
         })
         .catch((err) => {
           console.log(err);

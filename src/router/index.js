@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Area from "../views/Area.vue";
 import Club from "../views/Club.vue";
 import Player from "../views/Player.vue";
+import PlayerDetail from "../views/PlayerDetail.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/player",
     name: "Player",
     component: Player,
+  },
+  {
+    path: "/player-detail",
+    name: "PlayerDetail",
+    component: PlayerDetail,
   },
 ];
 

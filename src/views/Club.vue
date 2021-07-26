@@ -1,7 +1,10 @@
 <template>
   <div>
-    <div class="container bg-blue-300 h-full mx-auto">
-      <div class="grid grid-cols-5">
+    <div
+      id="club-bg"
+      class="container h-full mx-auto bg-no-repeat bg-center bg-cover"
+    >
+      <div class="grid lg:grid-cols-5 md:grid-cols-3 pt-20">
         <ClubList v-for="club in clubs" :key="club.id" :club="club"></ClubList>
       </div>
     </div>
@@ -27,4 +30,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#club-bg {
+  background-image: url("../assets/field.jpg");
+}
+</style>

@@ -2,23 +2,29 @@
   <div>
     <header>
       <div
+        id="areaHeader"
         class="
           jumbotron
           flex flex-col
           items-center
           justify-center
           h-60
-          bg-blue-400
+          bg-no-repeat bg-cover
         "
       >
-        <h1 class="text-3xl font-semibold m-2">All Area</h1>
-        <p class="text-lg font-normal">
-          You can find your favourite team and players around the world here!
+        <h1 class="text-3xl font-semibold mt-10 mb-2 text-gray-200">
+          Search by Area
+        </h1>
+        <p class="text-lg font-normal text-gray-400">
+          Find your favourite teams/players from around the world
         </p>
       </div>
     </header>
-    <div class="container bg-blue-900 h-full mx-auto">
-      <div class="grid lg:grid-cols-10 md:grid-cols-5">
+    <div
+      id="areaBody"
+      class="bg-no-repeat bg-cover bg-center container h-full mx-auto"
+    >
+      <div class="grid lg:grid-cols-9 md:grid-cols-5 pt-2">
         <AreaList v-for="area in areas" :key="area.id" :area="area"></AreaList>
       </div>
     </div>
@@ -44,4 +50,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#areaHeader {
+  background-image: url("../assets/ball.png");
+}
+
+#areaBody {
+  background-image: url("../assets/field.jpg");
+}
+</style>
