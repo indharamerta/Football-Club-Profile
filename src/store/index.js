@@ -5,7 +5,7 @@ import router from "../router";
 
 Vue.use(Vuex);
 
-const baseUrl = "http://api.football-data.org/v2";
+const baseUrl = "https://api.football-data.org/v2";
 
 export default new Vuex.Store({
   state: {
